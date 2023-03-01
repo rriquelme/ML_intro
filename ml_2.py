@@ -14,11 +14,14 @@ def make_forge():
     X, y = X[mask], y[mask]
     return X, y
 
+
 # generate dataset
 X, y = make_forge()
-# plot dataset
-mglearn.discrete_scatter(X[:, 0], X[:, 1], y)
-plt.legend(["Class 0", "Class 1"], loc=4)
+print()
+X_df = pd.DataFrame(X,columns=["a","b"])
+X_df.plot(x = 'a',y='b',c = y.tolist(),kind='scatter')
+plt.legend(["Class 0", "Class 1"], loc=1)
+plt.legend(["Class 1", "Class 2"], loc=1)
 plt.xlabel("First feature")
 plt.ylabel("Second feature")
 plt.show()
