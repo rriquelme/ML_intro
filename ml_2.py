@@ -4,7 +4,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import mglearn
+import mglearn # need to remove...
 
 def make_forge():
     X, y = make_blobs(centers=2, random_state=4, n_samples=30)
