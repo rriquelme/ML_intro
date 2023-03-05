@@ -4,7 +4,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-import mglearn # need to remove...
+from sklearn.datasets import load_breast_cancer
 
 def make_forge():
     X, y = make_blobs(centers=2, random_state=4, n_samples=30)
@@ -20,9 +20,13 @@ X, y = make_forge()
 print()
 X_df = pd.DataFrame(X,columns=["a","b"])
 X_df.plot(x = 'a',y='b',c = y.tolist(),kind='scatter')
-plt.legend(["Class 0", "Class 1"], loc=1)
-plt.legend(["Class 1", "Class 2"], loc=1)
-plt.xlabel("First feature")
-plt.ylabel("Second feature")
-plt.show()
-print("X.shape: {}".format(X.shape))
+#plt.legend(["Class 0", "Class 1"], loc=1)
+#plt.legend(["Class 1", "Class 2"], loc=1)
+#plt.xlabel("First feature")
+#plt.ylabel("Second feature")
+#plt.show()
+#print("X.shape: {}".format(X.shape))
+
+cancer = load_breast_cancer()
+print("cancer.keys(): \n{}".format(cancer.keys()))
+print("Feature names:\n{}".format(cancer.feature_names))
